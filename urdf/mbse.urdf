@@ -1,0 +1,471 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mbse">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-6.7556E-18 0.13358 -0.0019116"
+        rpy="0 0 0" />
+      <mass
+        value="80.476" />
+      <inertia
+        ixx="1.4807"
+        ixy="-2.376E-17"
+        ixz="1.522E-17"
+        iyy="2.1004"
+        iyz="-0.060949"
+        izz="0.96939" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="CasterCase_R">
+    <inertial>
+      <origin
+        xyz="-8.3516E-07 0.039939 0.017317"
+        rpy="0 0 0" />
+      <mass
+        value="0.064246" />
+      <inertia
+        ixx="9.4075E-05"
+        ixy="1.3697E-09"
+        ixz="-2.8487E-09"
+        iyy="4.7976E-05"
+        iyz="2.815E-05"
+        izz="9.226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterCase_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterCase_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CtC_R"
+    type="continuous">
+    <origin
+      xyz="0.11 -0.14 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CasterCase_R" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CasterWheel_R">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 -0.0125 0.0405"
+        rpy="0 0 0" />
+      <mass
+        value="0.32248" />
+      <inertia
+        ixx="0.00068428"
+        ixy="-1.8959E-22"
+        ixz="-5.9389E-22"
+        iyy="0.00036183"
+        iyz="1.6944E-20"
+        izz="0.00036183" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterWheel_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79608 0.82353 0.93725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterWheel_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CtW_R"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CasterCase_R" />
+    <child
+      link="CasterWheel_R" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CasterCase_L">
+    <inertial>
+      <origin
+        xyz="-8.3516E-07 0.039939 0.017317"
+        rpy="0 0 0" />
+      <mass
+        value="0.064246" />
+      <inertia
+        ixx="9.4075E-05"
+        ixy="1.3697E-09"
+        ixz="-2.8487E-09"
+        iyy="4.7976E-05"
+        iyz="2.815E-05"
+        izz="9.226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterCase_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterCase_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CtC_L"
+    type="continuous">
+    <origin
+      xyz="-0.11 -0.14 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CasterCase_L" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CasterWheel_L">
+    <inertial>
+      <origin
+        xyz="4.1633E-17 -0.0125 0.0405"
+        rpy="0 0 0" />
+      <mass
+        value="0.32248" />
+      <inertia
+        ixx="0.00068428"
+        ixy="-2.3063E-22"
+        ixz="-4.2491E-22"
+        iyy="0.00036183"
+        iyz="1.7123E-20"
+        izz="0.00036183" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterWheel_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79608 0.82353 0.93725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/CasterWheel_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CtW_L"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CasterCase_L" />
+    <child
+      link="CasterWheel_L" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="DiffWheel_R">
+    <inertial>
+      <origin
+        xyz="0.035 -6.9389E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.5314" />
+      <inertia
+        ixx="0.0081415"
+        ixy="-2.3477E-21"
+        ixz="-6.0351E-20"
+        iyy="0.0044805"
+        iyz="2.6428E-19"
+        izz="0.0044805" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/DiffWheel_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/DiffWheel_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DW_R"
+    type="continuous">
+    <origin
+      xyz="0.1 0.12 0.025"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="DiffWheel_R" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="DiffWheel_L">
+    <inertial>
+      <origin
+        xyz="-0.035 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.5314" />
+      <inertia
+        ixx="0.0081415"
+        ixy="-2.3477E-21"
+        ixz="-6.0351E-20"
+        iyy="0.0044805"
+        iyz="2.6443E-19"
+        izz="0.0044805" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/DiffWheel_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/DiffWheel_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DW_L"
+    type="continuous">
+    <origin
+      xyz="-0.1 0.12 0.025"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="DiffWheel_L" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Lider_F">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.015 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.13014" />
+      <inertia
+        ixx="4.86E-05"
+        ixy="-8.4827E-38"
+        ixz="2.0705E-37"
+        iyy="7.83E-05"
+        iyz="-4.2739E-21"
+        izz="4.86E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/Lider_F.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/Lider_F.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Li_F"
+    type="continuous">
+    <origin
+      xyz="0.15 0.17764 0.145"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lider_F" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Lidar_B">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 0.015 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.13014" />
+      <inertia
+        ixx="4.86E-05"
+        ixy="-8.4827E-38"
+        ixz="2.0705E-37"
+        iyy="7.83E-05"
+        iyz="-4.2739E-21"
+        izz="4.86E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/Lidar_B.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find py_pkg)/meshes2/Lidar_B.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Li_B"
+    type="continuous">
+    <origin
+      xyz="-0.15 -0.17764 0.145"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lidar_B" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
